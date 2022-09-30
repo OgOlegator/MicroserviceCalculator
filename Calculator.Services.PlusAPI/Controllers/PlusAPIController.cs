@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Calculator.Services.PlusAPI.Controllers
 {
+    [Route("api/plus")]
     public class PlusAPIController : Controller
     {
         protected ResponseDto _response;
