@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Calculator.Services.PlusAPI.Controllers
 {
-    [Route("api/plus")]
+    //[Route("api/plus")]
     public class PlusAPIController : Controller
     {
         protected ResponseDto _response;
@@ -20,7 +20,7 @@ namespace Calculator.Services.PlusAPI.Controllers
             try
             {
                 var result = double.Parse(firstValue) + double.Parse(secondValue);
-                _response.Result = result.ToString();
+                _response.Result = new PlusResultDto { Result = result.ToString() };
             }
             catch (Exception ex)
             {

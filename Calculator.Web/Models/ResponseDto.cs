@@ -5,7 +5,7 @@
 
         public bool IsSuccess { get; set; } = true;
 
-        public string? Result { get; set; }
+        public object Result { get; set; }
 
         public string DisplayMessage { get; set; } = "";
 

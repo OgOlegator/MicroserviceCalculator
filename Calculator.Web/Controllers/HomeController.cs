@@ -1,4 +1,5 @@
 ﻿using Calculator.Web.Models;
+using Calculator.Web.Services.IServices;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -14,11 +15,6 @@ namespace Calculator.Web.Controllers
         }
 
         public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Privacy()
         {
             return View();
         }

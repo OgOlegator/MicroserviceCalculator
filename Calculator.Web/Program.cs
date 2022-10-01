@@ -5,11 +5,11 @@ using Calculator.Web.Services.IServices;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddHttpClient<IPlusServices, PlusService>();
+builder.Services.AddHttpClient<IPlusService, PlusService>();
 
 SD.PlusAPIBase = builder.Configuration["ServiceUrls:PlusAPI"];
 
-builder.Services.AddScoped<IPlusServices, PlusService>();
+builder.Services.AddScoped<IPlusService, PlusService>();
 
 builder.Services.AddControllersWithViews();
 
