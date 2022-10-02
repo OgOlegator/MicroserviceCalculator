@@ -14,12 +14,13 @@ namespace Calculator.Web.Controllers
             _plusService = plusService;
         }
 
-        public async Task<IActionResult> CalculatorIndex(string firstValue, string secondValue, string operation)
+        public async Task<IActionResult> CalculatorIndex(string firstValue, string secondValue, CalculatorModel.Operations operation)
         {
             CalculatorModel calculator = new CalculatorModel()
             {
                 FirstValue = firstValue,
-                SecondValue = secondValue
+                SecondValue = secondValue,
+                Operation = operation
             };
 
             if (!decimal.TryParse(firstValue, out var a) || !decimal.TryParse(secondValue, out var b))
@@ -33,16 +34,16 @@ namespace Calculator.Web.Controllers
 
             switch (operation)
             {
-                case "+":
+                case CalculatorModel.Operations.Plus: //"+":
                     response = await GetPlusResult(firstValue, secondValue);
                     break;
-                case "-":
+                case CalculatorModel.Operations.Minus: //"-":
                     result = (a - b).ToString();
                     break;
-                case "*":
+                case CalculatorModel.Operations.Multiply: //"*":
                     result = (a * b).ToString();
                     break;
-                case "/":
+                case CalculatorModel.Operations.Divide: //"/":
                     result = b != 0 ?
                     (a / b).ToString()
                     : "error";

@@ -17,10 +17,17 @@ namespace Calculator.Web.Models
 
         public enum Operations
         {
+            [Display(Name = "")]
+            Empty,
+            [Display(Name = "+")]
             Plus,
+            [Display(Name = "-")]
             Minus,
+            [Display(Name = "*")]
             Multiply,
+            [Display(Name = "/")]
             Divide
         }
+
     }
 }

@@ -10,13 +10,7 @@
             <input type="text" id="firstValue" name="firstValue" value="@Model.FirstValue" />
         </td>
         <td>
-            <select name="operation" >
-                <option></option>
-                <option>+</option>
-                <option>-</option>
-                <option>*</option>
-                <option>/</option>
-            </select>
+            @Html.DropDownList("operation", Html.GetEnumSelectList(typeof(CalculatorModel.Operations))) 
         </td>
         <td>
             <input type="text" id="SecondValue" name="SecondValue" value="@Model.SecondValue "/>
