@@ -11,6 +11,12 @@ SD.PlusAPIBase = builder.Configuration["ServiceUrls:PlusAPI"];
 
 builder.Services.AddScoped<IPlusService, PlusService>();
 
+builder.Services.AddHttpClient<IMinusService, MinusService>();
+
+SD.MinusAPIBase = builder.Configuration["ServiceUrls:MinusAPI"];
+
+builder.Services.AddScoped<IMinusService, MinusService>();
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
