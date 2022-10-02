@@ -55,7 +55,11 @@ namespace Calculator.Web.Controllers
 
             if(response != null && response.IsSuccess)
             {
-                calculator.Result = JsonConvert.DeserializeObject<PlusResultDto>(Convert.ToString(response.Result)).Result;
+                calculator.Result = JsonConvert.DeserializeObject<ResultDto>(Convert.ToString(response.Result)).Result;
+            }
+            else if (!response.IsSuccess)
+            {
+                calculator.Result = string.IsNullOrEmpty(response.DisplayMessage) ? "Error" : response.DisplayMessage;
             }
             else
             {
@@ -67,7 +71,7 @@ namespace Calculator.Web.Controllers
 
         private async Task<ResponseDto> GetPlusResult(string firstValue, string secondValue)
         {
-            PlusResultDto result = new();
+            ResultDto result = new();
             var response = await _plusService.GetPlusResultAsync<ResponseDto>(firstValue, secondValue);
 
             return response;
@@ -75,7 +79,7 @@ namespace Calculator.Web.Controllers
 
         private async Task<ResponseDto> GetMinusResult(string firstValue, string secondValue)
         {
-            PlusResultDto result = new();
+            ResultDto result = new();
             var response = await _minusService.GetMinusResultAsync<ResponseDto>(firstValue, secondValue);
 
             return response;
@@ -83,7 +87,7 @@ namespace Calculator.Web.Controllers
 
         private async Task<ResponseDto> GetMultiplyResult(string firstValue, string secondValue)
         {
-            PlusResultDto result = new();
+            ResultDto result = new();
             var response = await _multiplyService.GetMultiplyResultAsync<ResponseDto>(firstValue, secondValue);
 
             return response;
@@ -91,7 +95,7 @@ namespace Calculator.Web.Controllers
 
         private async Task<ResponseDto> GetDivideResult(string firstValue, string secondValue)
         {
-            PlusResultDto result = new();
+            ResultDto result = new();
             var response = await _divideService.GetDivideResultAsync<ResponseDto>(firstValue, secondValue);
 
             return response;
