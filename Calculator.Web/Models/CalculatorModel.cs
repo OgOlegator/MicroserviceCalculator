@@ -17,10 +17,10 @@ namespace Calculator.Web.Models
 
         public enum Operations
         {
-            Plus = '+',
-            Minus = '-',
-            Multiply = '*',
-            Divide = '/'
+            Plus,
+            Minus,
+            Multiply,
+            Divide
         }
     }
 }

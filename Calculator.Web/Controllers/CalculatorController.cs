@@ -20,7 +20,7 @@ namespace Calculator.Web.Controllers
             {
                 FirstValue = firstValue,
                 SecondValue = secondValue
-            };          
+            };
 
             if (!decimal.TryParse(firstValue, out var a) || !decimal.TryParse(secondValue, out var b))
             {
