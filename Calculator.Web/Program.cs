@@ -6,16 +6,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddHttpClient<IPlusService, PlusService>();
-
 SD.PlusAPIBase = builder.Configuration["ServiceUrls:PlusAPI"];
-
 builder.Services.AddScoped<IPlusService, PlusService>();
 
 builder.Services.AddHttpClient<IMinusService, MinusService>();
-
 SD.MinusAPIBase = builder.Configuration["ServiceUrls:MinusAPI"];
-
 builder.Services.AddScoped<IMinusService, MinusService>();
+
+builder.Services.AddHttpClient<IMultiplyService, MultiplyService>();
+SD.MultiplyAPIBase = builder.Configuration["ServiceUrls:MultiplyAPI"];
+builder.Services.AddScoped<IMultiplyService, MultiplyService>();
 
 builder.Services.AddControllersWithViews();
 

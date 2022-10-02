@@ -9,11 +9,13 @@ namespace Calculator.Web.Controllers
     {
         private readonly IPlusService _plusService;
         private readonly IMinusService _minusService;
+        private readonly IMultiplyService _multiplyService;
 
-        public CalculatorController(IPlusService plusService, IMinusService minusService)
+        public CalculatorController(IPlusService plusService, IMinusService minusService, IMultiplyService multiplyService)
         {
             _plusService = plusService;
             _minusService = minusService;
+            _multiplyService = multiplyService;
         }
 
         public async Task<IActionResult> CalculatorIndex(string firstValue, string secondValue, CalculatorModel.Operations operation)
@@ -42,8 +44,8 @@ namespace Calculator.Web.Controllers
                 case CalculatorModel.Operations.Minus:
                     response = await GetMinusResult(firstValue, secondValue);
                     break;
-                case CalculatorModel.Operations.Multiply: 
-                    result = (a * b).ToString();
+                case CalculatorModel.Operations.Multiply:
+                    response = await GetMultiplyResult(firstValue, secondValue);
                     break;
                 case CalculatorModel.Operations.Divide: 
                     result = b != 0 ?
@@ -79,6 +81,14 @@ namespace Calculator.Web.Controllers
         {
             PlusResultDto result = new();
             var response = await _minusService.GetMinusResultAsync<ResponseDto>(firstValue, secondValue);
+
+            return response;
+        }
+
+        private async Task<ResponseDto> GetMultiplyResult(string firstValue, string secondValue)
+        {
+            PlusResultDto result = new();
+            var response = await _multiplyService.GetMultiplyResultAsync<ResponseDto>(firstValue, secondValue);
 
             return response;
         }
