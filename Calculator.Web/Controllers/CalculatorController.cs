@@ -34,16 +34,16 @@ namespace Calculator.Web.Controllers
 
             switch (operation)
             {
-                case CalculatorModel.Operations.Plus: //"+":
+                case CalculatorModel.Operations.Plus: 
                     response = await GetPlusResult(firstValue, secondValue);
                     break;
-                case CalculatorModel.Operations.Minus: //"-":
+                case CalculatorModel.Operations.Minus: 
                     result = (a - b).ToString();
                     break;
-                case CalculatorModel.Operations.Multiply: //"*":
+                case CalculatorModel.Operations.Multiply: 
                     result = (a * b).ToString();
                     break;
-                case CalculatorModel.Operations.Divide: //"/":
+                case CalculatorModel.Operations.Divide: 
                     result = b != 0 ?
                     (a / b).ToString()
                     : "error";
