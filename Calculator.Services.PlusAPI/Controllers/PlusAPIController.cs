@@ -30,11 +30,5 @@ namespace Calculator.Services.PlusAPI.Controllers
 
             return _response;
         }
-
-
-        public IActionResult Index()
-        {
-            return View();
-        }
     }
 }
