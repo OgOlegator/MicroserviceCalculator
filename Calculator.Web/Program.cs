@@ -17,6 +17,10 @@ builder.Services.AddHttpClient<IMultiplyService, MultiplyService>();
 SD.MultiplyAPIBase = builder.Configuration["ServiceUrls:MultiplyAPI"];
 builder.Services.AddScoped<IMultiplyService, MultiplyService>();
 
+builder.Services.AddHttpClient<IDivideService, DivideService>();
+SD.DivideAPIBase = builder.Configuration["ServiceUrls:DivideAPI"];
+builder.Services.AddScoped<IDivideService, DivideService>();
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
