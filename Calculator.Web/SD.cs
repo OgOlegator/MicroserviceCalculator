@@ -5,6 +5,8 @@
 
         public static string PlusAPIBase { get; set; }
 
+        public static string MinusAPIBase { get; set; }
+
         public enum APIType
         {
             GET,
