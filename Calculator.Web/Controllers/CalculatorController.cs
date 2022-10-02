@@ -10,12 +10,14 @@ namespace Calculator.Web.Controllers
         private readonly IPlusService _plusService;
         private readonly IMinusService _minusService;
         private readonly IMultiplyService _multiplyService;
+        private readonly IDivideService _divideService;
 
-        public CalculatorController(IPlusService plusService, IMinusService minusService, IMultiplyService multiplyService)
+        public CalculatorController(IPlusService plusService, IMinusService minusService, IMultiplyService multiplyService, IDivideService divideService)
         {
             _plusService = plusService;
             _minusService = minusService;
             _multiplyService = multiplyService;
+            _divideService = divideService;
         }
 
         public async Task<IActionResult> CalculatorIndex(string firstValue, string secondValue, CalculatorModel.Operations operation)
@@ -27,14 +29,13 @@ namespace Calculator.Web.Controllers
                 Operation = operation
             };
 
-            if (!decimal.TryParse(firstValue, out var a) || !decimal.TryParse(secondValue, out var b))
+            if (!decimal.TryParse(firstValue, out _) || !decimal.TryParse(secondValue, out _))
             {
                 calculator.Result = "Введите данные";
                 return View(calculator);
             }
 
             ResponseDto response = null;
-            string result = "";
 
             switch (operation)
             {
@@ -47,13 +48,8 @@ namespace Calculator.Web.Controllers
                 case CalculatorModel.Operations.Multiply:
                     response = await GetMultiplyResult(firstValue, secondValue);
                     break;
-                case CalculatorModel.Operations.Divide: 
-                    result = b != 0 ?
-                    (a / b).ToString()
-                    : "error";
-                    break;
-                default:
-                    result = "Введите данные";
+                case CalculatorModel.Operations.Divide:
+                    response = await GetDivideResult(firstValue, secondValue);
                     break;
             }
 
@@ -63,7 +59,7 @@ namespace Calculator.Web.Controllers
             }
             else
             {
-                calculator.Result = result;
+                calculator.Result = "Введите данные";
             }
             
             return View(calculator);
@@ -89,6 +85,14 @@ namespace Calculator.Web.Controllers
         {
             PlusResultDto result = new();
             var response = await _multiplyService.GetMultiplyResultAsync<ResponseDto>(firstValue, secondValue);
+
+            return response;
+        }
+
+        private async Task<ResponseDto> GetDivideResult(string firstValue, string secondValue)
+        {
+            PlusResultDto result = new();
+            var response = await _divideService.GetDivideResultAsync<ResponseDto>(firstValue, secondValue);
 
             return response;
         }
