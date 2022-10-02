@@ -1,0 +1,33 @@
+﻿@model global::Calculator.Web.Models.CalculatorModel
+
+<br /> <br />
+
+@using (Html.BeginForm("CalculatorIndex", "Calculator"))
+{
+<table>
+    <tr>
+        <td>
+            <input type="text" id="firstValue" name="firstValue" value="@Model.FirstValue" />
+        </td>
+        <td>
+            @Html.DropDownList("operation", Html.GetEnumSelectList(typeof(CalculatorModel.Operations))) 
+        </td>
+        <td>
+            <input type="text" id="SecondValue" name="SecondValue" value="@Model.SecondValue "/>
+        </td>
+        <td>
+            <input type="submit" value="="/>
+        </td>
+        <td>
+        </td>
+        <td>
+            <span>@Model.Result</span>
+        </td>
+    </tr>
+</table>
+}
+
+@using (Html.BeginForm("CalculatorIndex", "Calculator"))
+{
+    <input type="submit" value="Сбросить" />
+}

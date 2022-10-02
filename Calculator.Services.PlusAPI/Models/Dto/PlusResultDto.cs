@@ -3,7 +3,7 @@
     public class PlusResultDto
     {
 
-        public string? Result { get; set; }
+        public string Result { get; set; }
 
     }
 }

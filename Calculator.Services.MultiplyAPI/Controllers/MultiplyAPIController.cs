@@ -1,14 +1,14 @@
-﻿using Calculator.Services.PlusAPI.Models.Dto;
+﻿using Calculator.Services.MultiplyAPI.Models.Dto;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Calculator.Services.PlusAPI.Controllers
+namespace Calculator.Services.MultiplyAPI.Controllers
 {
-    //[Route("api/plus")]
-    public class PlusAPIController : Controller
+    //[Route("api/multiply")]
+    public class MultiplyAPIController : Controller
     {
         protected ResponseDto _response;
 
-        public PlusAPIController()
+        public MultiplyAPIController()
         {
             _response = new ResponseDto();
         }
@@ -19,16 +19,17 @@ namespace Calculator.Services.PlusAPI.Controllers
         {
             try
             {
-                var result = double.Parse(firstValue) + double.Parse(secondValue);
-                _response.Result = new PlusResultDto { Result = result.ToString() };
+                var result = double.Parse(firstValue) * double.Parse(secondValue);
+                _response.Result = new MultiplyResultDto { Result = result.ToString() };
             }
             catch (Exception ex)
             {
                 _response.IsSuccess = false;
-                _response.ErrorMessage = new List<string> { ex.ToString() };                
+                _response.ErrorMessage = new List<string> { ex.ToString() };
             }
 
             return _response;
         }
+
     }
 }

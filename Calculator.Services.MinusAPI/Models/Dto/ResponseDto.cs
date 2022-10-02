@@ -1,4 +1,4 @@
-﻿namespace Calculator.Web.Models
+﻿namespace Calculator.Services.MinusAPI.Models.Dto
 {
     public class ResponseDto
     {

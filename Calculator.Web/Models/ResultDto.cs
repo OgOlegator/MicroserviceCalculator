@@ -1,6 +1,6 @@
 ﻿namespace Calculator.Web.Models
 {
-    public class PlusResultDto
+    public class ResultDto
     {
 
         public string? Result { get; set; }

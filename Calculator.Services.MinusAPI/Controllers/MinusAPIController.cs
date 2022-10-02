@@ -1,14 +1,14 @@
-﻿using Calculator.Services.PlusAPI.Models.Dto;
+﻿using Calculator.Services.MinusAPI.Models.Dto;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Calculator.Services.PlusAPI.Controllers
+namespace Calculator.Services.MinusAPI.Controllers
 {
-    //[Route("api/plus")]
-    public class PlusAPIController : Controller
+    //[Route("api/minus")]
+    public class MinusAPIController : Controller
     {
         protected ResponseDto _response;
 
-        public PlusAPIController()
+        public MinusAPIController()
         {
             _response = new ResponseDto();
         }
@@ -19,13 +19,13 @@ namespace Calculator.Services.PlusAPI.Controllers
         {
             try
             {
-                var result = double.Parse(firstValue) + double.Parse(secondValue);
-                _response.Result = new PlusResultDto { Result = result.ToString() };
+                var result = double.Parse(firstValue) - double.Parse(secondValue);
+                _response.Result = new MinusResultDto { Result = result.ToString() };
             }
             catch (Exception ex)
             {
                 _response.IsSuccess = false;
-                _response.ErrorMessage = new List<string> { ex.ToString() };                
+                _response.ErrorMessage = new List<string> { ex.ToString() };
             }
 
             return _response;

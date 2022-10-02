@@ -2,7 +2,7 @@
 
 namespace Calculator.Web.Services.IServices
 {
-    public interface IPlusServices
+    public interface IPlusService : IBaseService
     {
         Task<T> GetPlusResultAsync<T>(string firstValue, string secondValue);
         

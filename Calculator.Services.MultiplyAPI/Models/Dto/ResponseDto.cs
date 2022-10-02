@@ -1,4 +1,4 @@
-﻿namespace Calculator.Web.Models
+﻿namespace Calculator.Services.MultiplyAPI.Models.Dto
 {
     public class ResponseDto
     {
