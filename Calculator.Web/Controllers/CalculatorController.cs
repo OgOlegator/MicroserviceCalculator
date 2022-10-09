@@ -57,15 +57,15 @@ namespace Calculator.Web.Controllers
             {
                 calculator.Result = JsonConvert.DeserializeObject<ResultDto>(Convert.ToString(response.Result)).Result;
             }
+            else if (response == null)
+            {
+                calculator.Result = "Введите данные";
+            }
             else if (!response.IsSuccess)
             {
                 calculator.Result = string.IsNullOrEmpty(response.DisplayMessage) ? "Error" : response.DisplayMessage;
             }
-            else
-            {
-                calculator.Result = "Введите данные";
-            }
-            
+
             return View(calculator);
         }
 

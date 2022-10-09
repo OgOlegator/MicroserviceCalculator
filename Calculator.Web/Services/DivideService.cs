@@ -16,7 +16,7 @@ namespace Calculator.Web.Services
             return await SendAsync<T>(new Models.ApiRequest
             {
                 APIType = SD.APIType.GET,
-                Url = SD.DivideAPIBase + "/" + firstValue + " " + secondValue // + "/api/minus/" + firstValue + "/" + secondValue
+                Url = SD.DivideAPIBase + "/api/divide/" + firstValue + " " + secondValue 
             });
         }
     }

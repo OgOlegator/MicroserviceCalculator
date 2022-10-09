@@ -3,8 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Calculator.Services.DivideAPI.Controllers
 {
-    //[Route("api/divide")]
-    public class DivideApiController : Controller
+    [ApiController]
+    [Route("api/divide")]
+    public class DivideApiController : ControllerBase
     {
         protected ResponseDto _response;
 

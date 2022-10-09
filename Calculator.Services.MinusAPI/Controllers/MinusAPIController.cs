@@ -3,8 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Calculator.Services.MinusAPI.Controllers
 {
-    //[Route("api/minus")]
-    public class MinusAPIController : Controller
+    [ApiController]
+    [Route("api/minus")]
+    public class MinusAPIController : ControllerBase
     {
         protected ResponseDto _response;
 

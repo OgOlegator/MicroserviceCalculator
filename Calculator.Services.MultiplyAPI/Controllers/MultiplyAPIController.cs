@@ -3,8 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Calculator.Services.MultiplyAPI.Controllers
 {
-    //[Route("api/multiply")]
-    public class MultiplyAPIController : Controller
+    [ApiController]
+    [Route("api/multiply")]
+    public class MultiplyAPIController : ControllerBase
     {
         protected ResponseDto _response;
 
