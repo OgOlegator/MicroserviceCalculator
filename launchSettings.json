@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "calculator.web": "StartWithoutDebugging",
+        "calculator.services.plusapi": "StartWithoutDebugging",
+        "calculator.services.multiplyapi": "StartWithoutDebugging",
+        "calculator.services.minusapi": "StartWithoutDebugging",
+        "calculator.services.divideapi": "StartWithoutDebugging"
+      }
+    }
+  }
+}

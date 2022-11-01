@@ -1,0 +1,36 @@
+version: '3.4'
+
+services:
+  calculator.web:
+    image: ${DOCKER_REGISTRY-}calculatorweb
+    build:
+      context: .
+      dockerfile: Calculator.Web/Dockerfile
+
+  calculator.services.divideapi:
+    image: ${DOCKER_REGISTRY-}calculatorservicesdivideapi
+    build:
+      context: .
+      dockerfile: Calculator.Services.DivideAPI/Dockerfile
+
+
+  calculator.services.minusapi:
+    image: ${DOCKER_REGISTRY-}calculatorservicesminusapi
+    build:
+      context: .
+      dockerfile: Calculator.Services.MinusAPI/Dockerfile
+
+
+  calculator.services.multiplyapi:
+    image: ${DOCKER_REGISTRY-}calculatorservicesmultiplyapi
+    build:
+      context: .
+      dockerfile: Calculator.Services.MultiplyAPI/Dockerfile
+
+
+  calculator.services.plusapi:
+    image: ${DOCKER_REGISTRY-}calculatorservicesplusapi
+    build:
+      context: .
+      dockerfile: Calculator.Services.PlusAPI/Dockerfile
+

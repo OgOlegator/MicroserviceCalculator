@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator.Services.MinusAP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator.Services.MultiplyAPI", "Calculator.Services.MultiplyAPI\Calculator.Services.MultiplyAPI.csproj", "{5EF317CA-4537-4AB8-9EB1-6128E6BB7601}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.Services.DivideAPI", "Calculator.Services.DivideAPI\Calculator.Services.DivideAPI.csproj", "{2FD509E2-D37C-4393-A037-31F3BCB077D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator.Services.DivideAPI", "Calculator.Services.DivideAPI\Calculator.Services.DivideAPI.csproj", "{2FD509E2-D37C-4393-A037-31F3BCB077D4}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{FB382931-C6C5-4306-913A-E059870C44B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{2FD509E2-D37C-4393-A037-31F3BCB077D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FD509E2-D37C-4393-A037-31F3BCB077D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FD509E2-D37C-4393-A037-31F3BCB077D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB382931-C6C5-4306-913A-E059870C44B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB382931-C6C5-4306-913A-E059870C44B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB382931-C6C5-4306-913A-E059870C44B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB382931-C6C5-4306-913A-E059870C44B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
